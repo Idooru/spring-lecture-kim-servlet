@@ -1,6 +1,5 @@
 package hello.servlet.basic.request;
 
-import com.google.gson.Gson;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -37,11 +36,7 @@ public class RequestParamServlet extends HttpServlet {
         Parameter parameter = new Parameter(username, age);
         Response<Parameter> responseResult = new ResponseBuilder<Parameter>().setSuccess(true).setMessage("provide parameter info").setResult(parameter).build();
 
-
-        final Gson gson = new Gson();
-        final String toJson = gson.toJson(responseResult);
-
-        response.getWriter().write(toJson);
+        response.getWriter();
     }
 
     @RequiredArgsConstructor

@@ -30,10 +30,13 @@ public class HelloServlet extends HttpServlet {
         });
 
         final String username = request.getParameter("username");
+        final String password = request.getParameter("password");
+
+        final String format = String.format("Hello! %s! your password is %s!", username, password);
 
         response.setContentType("text/plain");
         response.setCharacterEncoding("utf-8");
-        response.getWriter().write("hello " + username);
+        response.getWriter().write(format);
 
     }
 }
